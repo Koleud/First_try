@@ -10,41 +10,142 @@
 <body>
 
 <style>
-  .button-column {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 16px;
-    align-items: center; 
-  }
-
     ion-button {
         width: 200px;
+        margin-left: 20px;
         --background: #0d8aa0;
     }
 
+    .small_button {
+        width: 70px;
+        margin-left: 20px;
+        --background: #0d8aa0;
+    }
+
+    ion-tab-button {
+        --color: rgb(104, 104, 104); /* non active color */
+        --color-selected: #0d8aa0; /* active color */
+    }
+
+    ion-input {
+        background: #ffffff;
+        margin-left: 15px;
+        max-width: 100%;
+        max-height: 15px;
+    }
+
+    .ion-input-small {
+        background: #ffffff;
+        margin-left: 15px;
+        max-width: 50px;
+        max-height: 15px;
+    }
 </style>
 
-    <ion-header>
-        <ion-toolbar>
-            <ion-title>Better&Better</ion-title>
-        </ion-toolbar>
-    </ion-header>
+<ion-tabs>
 
-    <ion-content>
-        <div class="ion-text-center">
-            <h1>Better&Better</h1>
-            <p>Your personal statistician assistant</p>
-        </div>
+    <ion-tab tab="home">
+        <div id="home-page">
 
-        <div class="button-column">
-            <ion-button >New Training</ion-button>
-            <ion-button >History</ion-button>
-            <ion-button >Settings</ion-button>
-            <ion-button >About</ion-button>
-            <ion-button>Exit</ion-button>
+            <ion-header>
+                <ion-toolbar>
+                    <ion-title>Home</ion-title>
+                </ion-toolbar>
+            </ion-header>
+
+            <div class="ion-text-center">
+                <h1>Better&Better</h1>
+                <p>Your personal statistician assistant</p>
+            </div>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <div>
+                                <ion-input aria-label="Primary input" placeholder="Primary input" color="dark"></ion-input>
+                            </div>    
+                        </ion-col>
+
+                        <ion-col size="auto">
+                            <div>
+                                <ion-input class="ion-input-small" aria-label="Primary input" placeholder="NUM" color="dark"></ion-input>
+                            </div>    
+                        </ion-col>
+
+                        <ion-col size="auto">
+                            <div>
+                                <ion-button class="small_button" id="start_training">Add</ion-button>
+                            </div>
+                        </ion-col>
+
+                    </ion-row>
+                </ion-grid>
+
+
+                <div class="button-column">
+                    <ion-button id="start_training">Start training</ion-button>
+                </div>
+
+                <div class="button-column">
+                    <ion-button  id="finish_training">Finish training</ion-button>
+                </div>
+
+                <div>
+                    <ion-input aria-label="Primary input" placeholder="Primary input" color="dark"></ion-input>
+                </div>  
+
+        </div>    
+    </ion-tab>
+
+    <ion-tab tab="settings">
+        <div id="settings-page">
+
+            <ion-header>
+                <ion-toolbar>
+                    <ion-title>Settings</ion-title>
+                </ion-toolbar>
+            </ion-header>
+
+            <div>Settings Page</div>
+
         </div>
-    </ion-content>
+    </ion-tab>
+
+    <ion-tab tab="history">
+        <div id="history-page">
+
+            <ion-header>
+                <ion-toolbar>
+                    <ion-title>History</ion-title>
+                </ion-toolbar>
+            </ion-header>
+
+            <h4 style="margin-left: 20px; margin-top: 20px;">Your training history</h4>
+
+        </div>
+    </ion-tab>
+
+    <ion-tab-bar slot="bottom">
+
+        <ion-tab-button tab="home">
+            <ion-icon name="home"></ion-icon>
+            <ion-label>Home</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="history">
+            <ion-icon name="time"></ion-icon>
+            <ion-label>History</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="settings">
+            <ion-icon name="settings"></ion-icon>
+            <ion-label>Settings</ion-label>
+        </ion-tab-button>
+
+    </ion-tab-bar>
+
+</ion-tabs>
+
+
 <script>
 
 </script>
